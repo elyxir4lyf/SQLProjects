@@ -1,4 +1,4 @@
-![project omage](/images/SQL_portfolio_project.png "project_image")
+![project omage](/images/SQL_portfolio_project.png)
 
 
 
