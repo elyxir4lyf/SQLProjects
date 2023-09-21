@@ -165,16 +165,15 @@ Kindly find the link to the dashboard [here](https://lookerstudio.google.com/emb
 
 > __Orders data Requirement__  
 The following are requirements to be achieved with the orders data:  
-        1. Item name
-        2. Item price
-        3. Quantity
-        4. Customer name
+        1. Item name  
+        2. Item price  
+        3. Quantity  
+        4. Customer name  
         5. Delivery Address
     
 
-
 > __Stock Control Requirements__  
-The following are the requirements to be achieved with for stock control
+The following are the requirements to be achieved with for stock control:  
         1. I wants to be abale to know when it's time ti order new stock
         2. To do this, we're going to need more information about:
             - What ingridient go into each pizza
@@ -184,7 +183,7 @@ The following are the requirements to be achieved with for stock control
     
 
 > __Statf Data Requirements__  
-    1. Wants to know which staff members are working when
+    1. Wants to know which staff members are working when  
     2. based on the staff salary information, how much each pizza costs (ingridients + chefs + delivery)
 
 <br>
@@ -196,10 +195,8 @@ The following are the requirements to be achieved with for stock control
 I used Google Data Studio (Looker Studio) for creating the Dashboard and Report. I changes the columns data type so that I conforms to the neccessary norms like GEO Address for Addresses and Date & Time for date and time columns etc.
 
 The dashboard focuses on the ten items requested in the brief above. The dashboard was built in two phases:
-<ul>
-    <li>Phase 1: Queries</li>
-    <li>Phase 2: Design</li>
-</ul>
+- __Phase 1:__ Queries
+- __Phase 2:__ Design
 
 <br>
     
