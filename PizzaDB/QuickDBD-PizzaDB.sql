@@ -1,5 +1,5 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
--- Link to schema: https://app.quickdatabasediagrams.com/#/d/rAoX3C
+-- Link to schema: https://app.quickdatabasediagrams.com/#/d/faF8HQ
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
@@ -53,7 +53,6 @@ CREATE TABLE `ingredient` (
     `ing_id` varchar(10)  NOT NULL ,
     `ing_name` varchar(200)  NOT NULL ,
     `ing_weight` int  NOT NULL ,
-    `ing_meas` varchar(20)  NOT NULL ,
     `ing_price` decimal(5,2)  NOT NULL ,
     PRIMARY KEY (
         `ing_id`
@@ -79,6 +78,24 @@ CREATE TABLE `inventory` (
     )
 );
 
+CREATE TABLE `rota` (
+    `row_id` int  NOT NULL ,
+    `rota_id` varchar(20)  NOT NULL ,
+    `date` datetime  NOT NULL ,
+    `shift_id` varchar(20)  NOT NULL ,
+    `staff_id` varchar(20)  NOT NULL ,
+    PRIMARY KEY (
+        `row_id`
+    )
+);
+
+CREATE TABLE `shift` (
+    `shift_id` varchar(20)  NOT NULL ,
+    `day_of_the_week` varchar(10)  NOT NULL ,
+    `start_time` time  NOT NULL ,
+    `end_time` time  NOT NULL 
+);
+
 CREATE TABLE `staff` (
     `staff_id` varchar(20)  NOT NULL ,
     `first_name` varchar(50)  NOT NULL ,
@@ -90,24 +107,30 @@ CREATE TABLE `staff` (
     )
 );
 
-CREATE TABLE `shift` (
-    `shift_id` varchar(20)  NOT NULL ,
-    `day_of_week` varchar(10)  NOT NULL ,
-    `start_time` time  NOT NULL ,
-    `end_time` time  NOT NULL ,
-    PRIMARY KEY (
-        `shift_id`
-    )
-);
+ALTER TABLE `customers` ADD CONSTRAINT `fk_customers_cust_id` FOREIGN KEY(`cust_id`)
+REFERENCES `orders` (`cust_id`);
 
-CREATE TABLE `rota` (
-    `row_id` int  NOT NULL ,
-    `rota_id` varchar(20)  NOT NULL ,
-    `date` datetime  NOT NULL ,
-    `shift_id` varchar(20)  NOT NULL ,
-    `staff_id` varchar(20)  NOT NULL ,
-    PRIMARY KEY (
-        `row_id`
-    )
-);
+ALTER TABLE `address` ADD CONSTRAINT `fk_address_add_id` FOREIGN KEY(`add_id`)
+REFERENCES `orders` (`add_id`);
+
+ALTER TABLE `item` ADD CONSTRAINT `fk_item_item_id` FOREIGN KEY(`item_id`)
+REFERENCES `orders` (`item_id`);
+
+ALTER TABLE `ingredient` ADD CONSTRAINT `fk_ingredient_ing_id` FOREIGN KEY(`ing_id`)
+REFERENCES `recipe` (`ing_id`);
+
+ALTER TABLE `recipe` ADD CONSTRAINT `fk_recipe_row_id` FOREIGN KEY(`row_id`)
+REFERENCES `orders` (`row_id`);
+
+ALTER TABLE `inventory` ADD CONSTRAINT `fk_inventory_item_id` FOREIGN KEY(`item_id`)
+REFERENCES `recipe` (`recipe_id`);
+
+ALTER TABLE `rota` ADD CONSTRAINT `fk_rota_date` FOREIGN KEY(`date`)
+REFERENCES `orders` (`created_at`);
+
+ALTER TABLE `shift` ADD CONSTRAINT `fk_shift_shift_id` FOREIGN KEY(`shift_id`)
+REFERENCES `rota` (`shift_id`);
+
+ALTER TABLE `staff` ADD CONSTRAINT `fk_staff_staff_id` FOREIGN KEY(`staff_id`)
+REFERENCES `rota` (`staff_id`);
 
