@@ -125,11 +125,13 @@ The budget for the project is $50,000.
 ---
 Kindly find the link to the dashboard [here](https://lookerstudio.google.com/embed/reporting/d027f0ed-fd15-4e17-a219-174a3f72c9ea/page/KYHdD)
 
-
+<br>
+<br>
 
 
 ## Project Building
 ---
+
 
 ### The steps I took
 ---
@@ -148,8 +150,8 @@ Kindly find the link to the dashboard [here](https://lookerstudio.google.com/emb
 2. I used Quick DBD to create the diagram of the database and the tables.
 
 3. I also normalized the table to achieve the following:  
-    - reduce redundancy
-    - improve efficiency
+    - Reduce redundancy
+    - Improve efficiency
     
 <br>
 
@@ -163,11 +165,11 @@ Kindly find the link to the dashboard [here](https://lookerstudio.google.com/emb
 
 > __Orders data Requirement__  
 The following are requirements to be achieved with the orders data:  
-        - Item name
-        - Item price
-        - Quantity
-        - Customer name
-        - Delivery Address
+        1. Item name
+        2. Item price
+        3. Quantity
+        4. Customer name
+        5. Delivery Address
     
 
 
@@ -199,17 +201,22 @@ The dashboard focuses on the ten items requested in the brief above. The dashboa
     <li>Phase 2: Design</li>
 </ul>
 
-
+<br>
     
 ### Dashboards To Be Built
 ---
 
-#### Dashboard 1
+#### Dashboard 1 - Orders
 
-
+![Dashboard_pg_1](images/db_pg1.png)
     
-#### Dashboard 2 - Inventory Management
+#### Dashboard 2 - Inventory
 
+![Dashboard_pg_2](images/db_pg2.png)
+
+#### Dashboard 3 - Staff
+
+![Dashboard_pg_3](images/db_pg3.png)
 
  
 
